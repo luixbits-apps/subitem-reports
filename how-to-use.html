@@ -1,0 +1,384 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>Subitem Reports guide</title><meta name="description" content="Subitem Reports is a dashboard widget for monday.com. It charts, rolls up and exports the subitems (sub-items, subtasks) on your boards by status, owner, est…"><link rel="canonical" href="https://luixbits-apps.github.io/subitem-reports/how-to-use.html"><link rel="stylesheet" href="site.css"></head><body><main><h1>Subitem Reports guide</h1>
+<p>Last updated: 2026-10-16</p>
+<h2>What it does</h2>
+<p>Subitem Reports is a dashboard widget for monday.com. It charts, rolls up and
+exports the subitems (sub-items, subtasks) on your boards by status, owner,
+estimate or any other column, across one or many boards and every subitem
+level. It has four views: Chart, Rollup table, Trend and Workload. It reads
+your boards and never changes them.</p>
+<p>Everything runs inside monday. Report settings and trend history are saved
+in your monday account&#39;s app storage. Nothing is e-mailed and nothing is
+stored outside monday.</p>
+<p><video controls preload="metadata" aria-label="55-second overview of Subitem Reports" src="guide-assets/demo-55s.mp4">Your browser does not support embedded video. The steps below cover the same workflow.</video></p>
+<h2>Before you start</h2>
+<ul>
+<li>Only an account admin can install apps. Other users see &quot;Request to add&quot; on
+the listing.</li>
+<li>To use the widget you need a member or guest role with access to the boards
+you report on. monday viewers cannot use the board API, so the widget shows
+&quot;A member or guest role is required&quot; instead of a report.</li>
+<li>Your subitems need the columns you want to measure: a Status column for
+status breakdowns and % done, a Numbers column (for example Estimate (h))
+for sums and workload, and a People column plus a Date column for Workload.</li>
+<li>Every install starts a 14-day Business trial with everything unlocked. No
+card is needed. After the trial the account moves to Free and keeps every
+report.</li>
+</ul>
+<h2>Install and add to a dashboard</h2>
+<ol>
+<li>Install Subitem Reports from its monday marketplace listing or from the
+install button on the Subitem Reports website.</li>
+<li>Open a dashboard, choose Add widget, then Apps, then Subitem Reports. The
+widget starts from the boards connected to the dashboard.</li>
+<li>The welcome screen, &quot;See the work inside your subitems&quot;, shows a live
+preview of your own subitems counted by status on the first connected
+board that has subitems. Choose &quot;Use this report&quot; to keep it (while the
+preview loads the button reads &quot;Start with <board name>&quot;), or &quot;Choose
+boards&quot; to pick boards first. &quot;Read the guide&quot; opens this page. During
+the trial the welcome screen also says how long it has left, for example
+&quot;Business trial: 14 days left, everything unlocked, no card&quot;.</li>
+</ol>
+<p>If none of the connected boards has subitems yet, the preview shows items
+instead and says &quot;No subitems on <board> yet — showing items&quot;. If the
+dashboard has no boards connected, the widget asks you to select a board or
+start from a demo report.</p>
+<p><img src="guide-assets/gallery-1-chart-light.png" alt="Example chart of subitem totals by status"></p>
+<h2>Your first report</h2>
+<p>The report is set up in the &quot;Edit report&quot; bar at the top of the widget. When
+the bar is collapsed it shows a one-line summary of the report, for example
+&quot;Subitems · Count by Status · 2 boards&quot;. Open it to change the fields below.
+Each view shows only the fields it uses.</p>
+<ul>
+<li><strong>Boards</strong>: a searchable picker (&quot;Search boards…&quot;). Free reports use one
+board; Team combines up to 5; Business has no limit. On Free, picking
+another board swaps it in.</li>
+<li><strong>Rows</strong> (Chart, Trend, Workload): Items, Subitems or Items + Subitems. The
+Rollup table always rolls subitems up to their parent items.</li>
+<li><strong>Levels</strong> (on boards whose subitems have subitems of their own): &quot;All
+levels&quot; or &quot;Direct subitems only&quot;, read the same way by every view (see
+Multi-level subitems below).</li>
+<li><strong>Group by</strong> (Chart): any column, including Status, People, Date, Numbers
+and Text columns. Date groups are ordered chronologically; blank cells form
+a &quot;No value&quot; group.</li>
+<li><strong>Aggregation</strong>: Count, Sum, Average, Min, Max or % done. Sum, Average, Min
+and Max read a number column (the <strong>Value column</strong> field); % done reads a
+status column (the <strong>Status column</strong> field) and is the share of rows in a
+done label. Count needs nothing else.</li>
+<li><strong>Done labels</strong> (with % done): which labels count as done. The default is
+&quot;the board&#39;s own done labels&quot;, the labels your board marks as done in the
+column&#39;s settings. Tick other labels when a board uses one such as
+&quot;Complete&quot; that is not marked done; &quot;Use the board&#39;s done labels&quot; goes back
+to the default.</li>
+<li><strong>At-risk labels</strong> (Rollup table): which labels count as stuck for the What
+changed column. The default is the labels named Stuck.</li>
+<li><strong>Filter</strong> (every view): choose a status column and untick the labels you
+want to leave out, for example Done. The field is named after the column,
+for example &quot;Filter Status&quot;.</li>
+<li><strong>Chart type</strong> (Chart): Bar, Line, Pie or Donut.</li>
+<li><strong>Goal</strong> (bar and line charts): a target drawn as a line, for example 40
+for 40 hours. The Trend draws the same goal line.</li>
+</ul>
+<p>The Workload view has its own fields above the grid (see Workload below).
+The PDF report&#39;s title, &quot;Prepared for&quot; line and logo are set when you create
+the PDF (see Exports).</p>
+<p>Changes save by themselves while the dashboard is in edit mode; the widget
+confirms with &quot;Saved for everyone on this dashboard&quot;. Outside edit mode it
+says &quot;Changes are not saved outside the dashboard&#39;s edit mode.&quot; The report
+settings are shared by everyone who uses the dashboard; the view you last
+opened is remembered for you alone.</p>
+<p>After your first report a one-time strip under the chart suggests the next
+steps: &quot;Next: Rollup table · Export · Trend&quot;.</p>
+<p>Columns with the same title and type are combined across boards, even when
+monday gives them different IDs. Give columns distinct titles when they mean
+different things or use different units. Subitems can use different columns
+from their parent items; the pickers show the columns of the rows you chose.</p>
+<h2>The views</h2>
+<h3>Chart</h3>
+<p>A bar, line, pie or donut chart of the aggregation per group. Status groups
+use the board&#39;s own label colors and order. Charts draw up to 20 groups; the
+rest are combined into one &quot;Other (N)&quot; group, and the CSV keeps every group.
+Hover a bar or slice for the exact value. A % done chart is scaled 0-100 %.</p>
+<h3>Rollup table</h3>
+<p>One row per top-level parent item with its board, the measured value (titled
+after the real column, for example &quot;Sum of Estimate (h)&quot;), the subitem count
+(shown once when the measure is Count, since the value is that count) and a
+status breakdown in the board&#39;s colors, plus a totals row. For % done
+each value also tells how many subitems are done, for example &quot;3 of 8 done&quot;.
+With Levels on &quot;All levels&quot; the table includes every subitem under the
+parent, at every level. On Business the table also has the &quot;What changed&quot;
+column (see below).</p>
+<p><img src="guide-assets/gallery-3-rollup.png" alt="Parent rollup with subitem totals and completion"></p>
+<h3>Trend</h3>
+<p>One value per day for the report&#39;s overall number (for example the count of
+open subitems or the sum of estimates), drawn as a line with the goal line.
+How the history is collected is explained below.</p>
+<h3>Workload</h3>
+<p>Hours per person per week. Choose the People column, the Date column and the
+Hours column (a Numbers column that holds hours), and the window in the Weeks
+field: &quot;Next 4, 8 or 12 weeks&quot; (from this week on, for estimates against due
+dates) or &quot;Last 4, 8 or 12 weeks&quot; (up to this week, for logged time). Until
+you choose, the widget takes the columns that hold the most values and looks
+ahead or back depending on where most of the dates fall. A row&#39;s hours are
+split evenly between its assignees and placed in the week of its date; rows
+without an assignee go to &quot;Unassigned&quot;. Hover a cell for the person, the week
+and the hours.</p>
+<h2>Exports</h2>
+<p>The Export menu above the report offers &quot;CSV&quot;, &quot;PNG&quot;, &quot;Copy image&quot; and &quot;PDF
+report&quot;:</p>
+<ul>
+<li><strong>CSV</strong> exports the current view: the chart&#39;s groups and values, the full
+rollup table, the workload grid (people × weeks) or the trend (Day (UTC) ·
+Value). Text that looks like a spreadsheet formula is escaped. If your
+spreadsheet opens the file in one column, import it with Data &gt; From
+Text/CSV and choose the comma delimiter.</li>
+<li><strong>PNG</strong> saves the current view as an image in the dashboard&#39;s colors. A
+very tall table is cut off; the widget says so, and the CSV has every row.</li>
+<li><strong>Copy image</strong> puts the same image on your clipboard for Slack, e-mail or a
+deck. When the browser does not allow clipboard access inside monday, the
+widget downloads the PNG instead and says &quot;Copying isn&#39;t allowed here, so
+the image was downloaded&quot;.</li>
+<li><strong>PDF report</strong> (Business) opens a short form above the report: &quot;Report
+title&quot; (left empty, the PDF uses the report&#39;s headline, for example &quot;Sum of
+Estimate (h) across subitems by Status&quot;), &quot;Prepared for (optional)&quot;,
+&quot;Logo (optional)&quot; with &quot;Upload logo&quot; (a PNG or JPEG from your computer,
+scaled down to 400 × 160 px) and &quot;Include What changed&quot;. &quot;Create PDF&quot; builds
+the report in your browser and downloads it: a cover with the title, the
+boards, the date, the logo and the &quot;Prepared for&quot; line, then the chart, the
+rollup table (with the What changed column when it is included) and, when
+the Workload columns are set, the workload grid. Tables in the PDF stop at
+200 rows with a note that the CSV export has the full table. In the
+dashboard&#39;s edit mode your title, line and logo are saved with the report
+settings for the next PDF; outside edit mode they last until you leave the
+page.</li>
+</ul>
+<p>CSV, PNG and Copy image are available on Team and Business; the PDF report
+on Business. Entries your plan does not include stay clickable and carry a
+lock pill with the plan&#39;s name; choosing one opens the plan card, and the
+export you chose runs as soon as the account is upgraded. Exports are
+generated in your browser; nothing is uploaded anywhere.</p>
+<h2>Trend history and how it is recorded</h2>
+<p>The Trend records itself: whenever anyone opens the dashboard and the report
+renders, the widget writes today&#39;s value into your monday account&#39;s app
+storage, once per day (UTC). The last write of the day wins. There is no
+background job and no backfill: days on which nobody opened the dashboard stay
+empty and are drawn as gaps.</p>
+<p>The status line under the chart says exactly that, for example &quot;Recorded
+whenever someone opens this dashboard · Last recorded Mon 13 Oct · 3 days
+without a visit · Record now&quot;. &quot;Record now&quot; refreshes the report and records
+today&#39;s value. On the first day the Trend reads &quot;Day 1 recorded — come back
+tomorrow.&quot;</p>
+<p>History belongs to the account, not to the user who opened the dashboard:
+everyone who opens the dashboard sees the same series. It is recorded on
+every plan from day one. Free shows the last 30 days live and draws the older
+recorded days faded, with the link &quot;Keep 13 months of history with Team&quot;;
+Team and Business show 13 months (400 days), change badges such as &quot;+12% vs
+7 days ago&quot; and &quot;+30% vs 30 days ago&quot;, and the trend CSV.</p>
+<p>A series is identified by the boards, Rows, Levels, Aggregation, value or
+status column, done labels and status filter. Changing any of these starts a
+different series; changing the chart type, the goal or Group by keeps the
+same series. Each series keeps its latest 400 recorded days.</p>
+<p>To delete a series, open the dashboard in edit mode and choose &quot;Delete this
+history&quot; on the Trend; its What changed record goes with it. &quot;Delete all
+Subitem Reports history&quot; in the Help menu removes every trend series, every
+What changed record and the usage counters the app stored for your account,
+for everyone; it is available to account admins in the dashboard&#39;s edit
+mode. Neither touches the report settings.</p>
+<h2>What changed</h2>
+<p>On Business the Rollup table and the PDF report include the &quot;What changed&quot;
+column: for each parent, the change in the measured value since the last
+recorded day (&quot;+3&quot;, &quot;−1&quot;; with % done the change is in percentage points,
+&quot;+5 pts&quot;), parents that moved to Done (&quot;→ Done&quot;) or became stuck (&quot;→ Stuck&quot;),
+and parents that are &quot;new&quot; since that day. The footer names the comparison
+day (&quot;since Mon 13 Oct&quot;), and a line under the table counts the parents
+removed since then (&quot;2 parents removed since Mon 13 Oct&quot;). On your first
+visit the column reads &quot;First visit — changes appear from your next visit&quot;,
+because the comparison point is written the first time the report renders.</p>
+<p>&quot;Stuck&quot; means the labels named Stuck on your board; you can change that in
+the At-risk labels field. On Free and Team the column header reads &quot;What
+changed · Business&quot; with a lock pill.</p>
+<h2>Multi-level subitems</h2>
+<p>Boards whose subitems have subitems of their own are read at every level.
+The Rollup table rolls everything up to the top-level parent. The Levels
+field chooses between all levels and direct subitems only, and every view
+reads it the same way. With &quot;Direct subitems only&quot; each direct subitem counts
+once, as monday shows it, including a status or number monday calculates
+from the subitems under it.</p>
+<p>Where monday calculates a parent&#39;s Numbers, Date or Status from its
+descendants, Items uses those calculated values, while Subitems and Items +
+Subitems use the underlying rows, so a parent&#39;s rollup is not counted again
+next to its descendants. Count counts actual rows, including intermediate
+levels. In the Rollup table&#39;s status breakdown, an intermediate subitem whose
+status monday calculates shows as &quot;rolled up&quot; (for example &quot;2 rolled up&quot;), so
+the breakdown adds up to the subitem count; grouped by Status, the Chart
+leaves those subitems out for the same reason.</p>
+<p>Large boards are read page by page. A board with more than 5,000 rows is cut
+there, and the widget says so (&quot;Showing the first 5,000 rows of <board>&quot;), so
+a very large board never freezes the dashboard.</p>
+<h2>Plans and trial</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Free</th>
+<th>Team</th>
+<th>Business</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Price per account</td>
+<td>$0</td>
+<td>$29/month or $276/year</td>
+<td>$79/month or $756/year</td>
+</tr>
+<tr>
+<td>Boards per report</td>
+<td>1</td>
+<td>5</td>
+<td>Unlimited (within monday&#39;s dashboard limits)</td>
+</tr>
+<tr>
+<td>Views</td>
+<td>Chart, Rollup table, Trend, Workload</td>
+<td>All</td>
+<td>All</td>
+</tr>
+<tr>
+<td>Exports</td>
+<td>None (lock pills)</td>
+<td>CSV, PNG, Copy image</td>
+<td>CSV, PNG, Copy image, PDF report</td>
+</tr>
+<tr>
+<td>Trend</td>
+<td>Last 30 days shown; history recorded from day one</td>
+<td>13 months, change badges, trend CSV</td>
+<td>13 months, change badges, trend CSV</td>
+</tr>
+<tr>
+<td>What changed</td>
+<td>—</td>
+<td>—</td>
+<td>In the table and the PDF</td>
+</tr>
+<tr>
+<td>Support by e-mail</td>
+<td>Reply within 2 business days</td>
+<td>Reply within 2 business days</td>
+<td>Reply within 1 business day</td>
+</tr>
+</tbody></table>
+<p>One flat price per monday account: every user and every widget is included,
+and nothing is metered except boards per report. Yearly billing is $23/month
+for Team and $63/month for Business, billed once a year. Plans are bought and
+billed through monday.com; you can cancel at any time in monday&#39;s billing, and
+any charge can be fully refunded within 30 days through monday.</p>
+<p>Every install starts a 14-day Business trial. The header chip &quot;Business trial
+· 14 days left&quot; counts down; its tooltip ticks off &quot;Report saved&quot;, &quot;First
+export&quot; and the recorded days. With 4 days left, and again on the day before
+it ends, a one-line banner says what pauses when the trial ends. After day 14
+the account moves to Free: reports, settings and recorded history stay. A
+report with more boards than Free allows shows its first board with the
+notice &quot;Showing the first board of N — resume Team to include all&quot;; exports
+keep their lock pills; the Trend keeps the last 30 days live; the &quot;What
+changed&quot; header shows its lock.</p>
+<p>The plan badge in the Edit report bar (&quot;Free plan · see plans&quot;, &quot;Team&quot;,
+&quot;Business&quot; or &quot;Business trial · N days&quot;) opens monday&#39;s plan picker. Only an
+account admin can change the plan; users who are not admins see &quot;Only an
+account admin can change the plan.&quot; and &quot;Copy a message for your admin&quot;,
+which copies a short request to the clipboard.</p>
+<h2>Describe a report (optional, uses your monday AI credits)</h2>
+<p>On the Chart, type what you want into &quot;Describe a report…&quot;, for example
+&quot;hours per person&quot;, &quot;open subitems by owner&quot; or &quot;% done per parent&quot; (the
+three example chips), and the widget sets up the report for you: it chooses
+Rows, Group by, the aggregation, the column, the chart type and the status
+filter from your board&#39;s real columns. Every number is still computed by the
+widget from your board data; the AI only picks settings. The result is
+announced as &quot;Applied: Sum of Estimate (h) by Owner · Undo&quot; and the summary
+line shows &quot;Set up with AI&quot; until you edit the report.</p>
+<p>What is sent: your request, the board names, the column titles and types,
+and the item and subitem counts go to monday AI on your account&#39;s credits. No
+cell values, item names or people. The feature needs monday
+AI enabled for your account (the External AI gateway permission) and AI
+credits; it is included on every plan.</p>
+<h2>Privacy</h2>
+<p>Before the widget is used, each person sees a line linking to the Terms of
+Service and the Privacy Policy: on the welcome screen of a new widget, and
+once under the report for everyone else (&quot;OK&quot; accepts it).</p>
+<p>The widget reads board data through the monday API in your browser with
+read-only access and does not change your boards. Report settings, including
+a PDF logo you upload, are saved in your monday account&#39;s app storage under
+the widget&#39;s own id, so everyone who uses that dashboard sees the same
+report. Trend history, What changed records and a few usage counters are
+saved there too, shared across the account. Plan purchases run through
+monday&#39;s own plan picker and billing.
+If you use &quot;Describe a report&quot;, your request and the board names and column
+titles go to monday&#39;s AI gateway on your account&#39;s credits and are passed on
+by monday to its model providers under monday&#39;s AI terms.
+Nothing is e-mailed, nothing goes to any server run by the developer, and
+the only thing the developer receives is the e-mail you send to support.
+Removing the widget from a dashboard stops its settings from being read;
+uninstalling the app removes the widget. Neither deletes what is stored.
+Stored history is deleted with &quot;Delete this history&quot; or with &quot;Delete all
+Subitem Reports history&quot; in the Help menu. Everything the app stored, report
+settings included, is deleted by the developer when an admin of your account
+asks, with your monday account ID. The privacy policy on the Subitem Reports
+website has the details.</p>
+<h2>Troubleshooting</h2>
+<ul>
+<li><strong>% done shows 0 %</strong>: no row has a label that counts as done. Check that
+Rows is Subitems (statuses are usually on the subitems, not the parents),
+that the Status column is the right one, and tick the right Done labels
+when your board uses a label such as &quot;Complete&quot; that is not marked done in
+the column settings.</li>
+<li><strong>&quot;Column not found — choose again in Edit report&quot;</strong>: the column this
+report used was renamed or deleted, or a newly added board does not have
+it. The widget never swaps in another column by itself; choose the column
+again in Edit report.</li>
+<li><strong>&quot;Showing the first board of N — resume Team to include all&quot;</strong>: the report
+has more boards than the current plan allows, usually after the trial.
+Nothing is lost: upgrade to see every board again, or remove boards from
+the picker.</li>
+<li><strong>&quot;No subitems on <board> yet&quot;</strong>: the board has no subitems, so a report on
+Subitems has nothing to count there. Add subitems, switch Rows to Items, or
+choose another board.</li>
+<li><strong>&quot;1 board in this report is not shared with you&quot;</strong>: another user added a
+board you cannot open. The boards you can see still render; ask the board
+owner for access.</li>
+<li><strong>&quot;monday is rate-limiting requests — retrying in N s&quot;</strong>: monday asked the
+widget to slow down. It retries by itself; nothing to do.</li>
+<li><strong>&quot;monday AI is not enabled for this account (External AI gateway
+permission) — ask an admin&quot;</strong>, <strong>&quot;Your account is out of monday AI
+credits&quot;</strong> or <strong>&quot;monday AI is busy — try again&quot;</strong>: &quot;Describe a report&quot;
+could not run. After a permission or credits error the input stays hidden
+until the dashboard is reopened. The chart is never affected.</li>
+<li><strong>&quot;Couldn&#39;t turn this view into an image in this browser&quot;</strong> or <strong>&quot;Couldn&#39;t
+copy this view as an image in this browser&quot;</strong>: the browser could not draw
+the view as an image. Export CSV instead, or try another browser. For Copy
+image, allow clipboard access for monday.com if your browser asks.</li>
+<li><strong>&quot;Couldn&#39;t read this report&#39;s saved settings&quot;</strong> or <strong>&quot;Something went
+wrong&quot;</strong>: choose Try again; if it repeats, &quot;Reset report&quot; deletes this
+widget&#39;s saved settings and starts over. Recorded history is not affected.</li>
+<li><strong>The Trend is empty or has gaps</strong>: history is written only when someone
+opens the dashboard. Open it daily, or use &quot;Record now&quot; after a change.</li>
+<li><strong>The widget is blank in monday&#39;s own dashboard PDF export</strong>: monday&#39;s
+dashboard export does not draw app widgets. Use the widget&#39;s Export menu
+instead: &quot;PDF report&quot; (Business) or &quot;PNG&quot; (Team).</li>
+<li><strong>&quot;Mixed statuses&quot;</strong> or <strong>&quot;rolled up&quot;</strong> in a breakdown: on boards whose
+subitems have subitems of their own, monday calculates such a subitem&#39;s
+status from the subitems under it (see Multi-level subitems).</li>
+<li><strong>Workload says &quot;No tracked hours in the next 8 weeks&quot;</strong> (or the last 8):
+the dates in the Date column lie outside that window. Choose the other
+direction or more weeks in the Weeks field, or check that the Date column
+is the one that holds the dates.</li>
+</ul>
+<h2>Need help?</h2>
+<p>E-mail contact@luizperren.dev with your monday account ID, the dashboard and view you
+used, what you expected and what happened. Do not send passwords or API
+tokens, and blur personal or confidential board content in screenshots.
+Replies come within 2 business days (1 business day on Business). The Help
+menu in the widget has &quot;Setup guide&quot; (this page), &quot;Rate Subitem Reports&quot;
+(monday&#39;s rating dialog), &quot;Contact support&quot; and &quot;Request a feature&quot; (both
+start an e-mail to support) and &quot;Delete all Subitem Reports history&quot;.</p>
+<p>Subitem Reports is developed and operated by Luiz Perren, an independent
+developer based in Switzerland. monday.com is a trademark of monday.com Ltd.</p>
+</main></body></html>
