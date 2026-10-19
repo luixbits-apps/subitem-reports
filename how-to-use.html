@@ -286,20 +286,6 @@ changed&quot; header shows its lock.</p>
 account admin can change the plan; users who are not admins see &quot;Only an
 account admin can change the plan.&quot; and &quot;Copy a message for your admin&quot;,
 which copies a short request to the clipboard.</p>
-<h2>Describe a report (optional, uses your monday AI credits)</h2>
-<p>On the Chart, type what you want into &quot;Describe a report…&quot;, for example
-&quot;hours per person&quot;, &quot;open subitems by owner&quot; or &quot;% done per parent&quot; (the
-three example chips), and the widget sets up the report for you: it chooses
-Rows, Group by, the aggregation, the column, the chart type and the status
-filter from your board&#39;s real columns. Every number is still computed by the
-widget from your board data; the AI only picks settings. The result is
-announced as &quot;Applied: Sum of Estimate (h) by Owner · Undo&quot; and the summary
-line shows &quot;Set up with AI&quot; until you edit the report.</p>
-<p>What is sent: your request, the board names, the column titles and types,
-and the item and subitem counts go to monday AI on your account&#39;s credits. No
-cell values, item names or people. The feature needs monday
-AI enabled for your account (the External AI gateway permission) and AI
-credits; it is included on every plan.</p>
 <h2>Privacy</h2>
 <p>Before the widget is used, each person sees a line linking to the Terms of
 Service and the Privacy Policy: on the welcome screen of a new widget, and
@@ -311,9 +297,6 @@ the widget&#39;s own id, so everyone who uses that dashboard sees the same
 report. Trend history, What changed records and a few usage counters are
 saved there too, shared across the account. Plan purchases run through
 monday&#39;s own plan picker and billing.
-If you use &quot;Describe a report&quot;, your request and the board names and column
-titles go to monday&#39;s AI gateway on your account&#39;s credits and are passed on
-by monday to its model providers under monday&#39;s AI terms.
 Nothing is e-mailed, nothing goes to any server run by the developer, and
 the only thing the developer receives is the e-mail you send to support.
 Removing the widget from a dashboard stops its settings from being read;
@@ -346,11 +329,6 @@ board you cannot open. The boards you can see still render; ask the board
 owner for access.</li>
 <li><strong>&quot;monday is rate-limiting requests — retrying in N s&quot;</strong>: monday asked the
 widget to slow down. It retries by itself; nothing to do.</li>
-<li><strong>&quot;monday AI is not enabled for this account (External AI gateway
-permission) — ask an admin&quot;</strong>, <strong>&quot;Your account is out of monday AI
-credits&quot;</strong> or <strong>&quot;monday AI is busy — try again&quot;</strong>: &quot;Describe a report&quot;
-could not run. After a permission or credits error the input stays hidden
-until the dashboard is reopened. The chart is never affected.</li>
 <li><strong>&quot;Couldn&#39;t turn this view into an image in this browser&quot;</strong> or <strong>&quot;Couldn&#39;t
 copy this view as an image in this browser&quot;</strong>: the browser could not draw
 the view as an image. Export CSV instead, or try another browser. For Copy
